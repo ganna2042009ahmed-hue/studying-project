@@ -17,3 +17,6 @@ Select the Website Customizer folder.
 Open any normal website and refresh the page.
 
 Click the extension icon and try the different buttons
+
+https://github.com/ganna2042009ahmed-hue/studying-project/releases/tag/v1 
+this is the release link
