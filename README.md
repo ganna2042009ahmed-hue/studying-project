@@ -1,3 +1,1 @@
-This project is a Chrome extension that helps users change how websites look.
-It can change the background color, text color, and text size.
-I made this project to make browsing websites easier 
+This project is a Chrome extension that allows you to customize the appearance of any website you visit. It lets you change the background color to light blue, change the text color to blue, and increase the font size to 22px to make the text bigger and easier to read. You can also reset all changes and return the website to its original
