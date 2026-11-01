@@ -1,7 +1,3 @@
-# studying-project
-This project includes a Number Statistics Calculator and a To-Do List Manager.
-
-The calculator helps users find the sum, average, highest number, and lowest number from a list of numbers.
-
-The To-Do List Manager allows users to add and organize their daily tasks.
-
+This project is a Chrome extension that helps users change how websites look.
+It can change the background color, text color, and text size.
+I made this project to make browsing websites easier 
