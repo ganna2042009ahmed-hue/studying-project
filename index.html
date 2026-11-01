@@ -1,49 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Calculator</title>
+    <title>Website Customizer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
 
-        <h1>Student Calculator</h1>
+        <h1>Website Customizer</h1>
 
-        <p class="description">
-            This project contains a Number Statistics Calculator and a To-Do List Manager.
-        </p>
+        <p>Change the appearance of any website</p>
 
-        <h2>Number Statistics Calculator</h2>
+        <button id="background">Change Background</button>
 
-        <p>Enter numbers separated by commas:</p>
+        <button id="color">Change Text Color</button>
 
-        <input
-            type="text"
-            id="numbers"
-            placeholder="Example: 12, 5, 8, 20, 15">
+        <button id="size">Increase Text Size</button>
 
-        <button onclick="calculate()">Calculate</button>
+        <button id="reset">Reset Website</button>
 
-        <div id="results" class="results"></div>
-
-        <hr>
-
-        <h2>To-Do List Manager</h2>
-
-        <p>Enter a task:</p>
-
-        <input
-            type="text"
-            id="taskInput"
-            placeholder="Enter a task">
-
-        <button onclick="addTask()">Add Task</button>
-
-        <ul id="taskList"></ul>
+        <p id="message"></p>
 
     </div>
 
@@ -51,4 +30,3 @@
 
 </body>
 </html>
-

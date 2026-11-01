@@ -1,64 +1,34 @@
+function changeWebsite(action) {
 
-function calculate(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 
-    let input = document.getElementById("numbers").value;
+        chrome.tabs.sendMessage(tabs[0].id, {action: action}, function(response) {
 
-    if(input.trim() === ""){
-        alert("Please enter some numbers.");
-        return;
-    }
+            if (chrome.runtime.lastError) {
+                document.getElementById("message").textContent = "Please refresh the website first.";
+                return;
+            }
 
-    let numbers = input.split(",").map(function(num){
-        return Number(num.trim());
+            document.getElementById("message").textContent = response;
+
+        });
+
     });
 
-    if(numbers.some(isNaN)){
-        alert("Please enter valid numbers.");
-        return;
-    }
-
-    let sum = numbers.reduce(function(total, num){
-        return total + num;
-    }, 0);
-
-    let average = sum / numbers.length;
-    let highest = Math.max(...numbers);
-    let lowest = Math.min(...numbers);
-    let range = highest - lowest;
-
-    let evenCount = numbers.filter(function(num){
-        return num % 2 === 0;
-    }).length;
-
-    let oddCount = numbers.filter(function(num){
-        return num % 2 !== 0;
-    }).length;
-
-    document.getElementById("results").innerHTML =
-        "<p><strong>Total Numbers:</strong> " + numbers.length + "</p>" +
-        "<p><strong>Sum:</strong> " + sum + "</p>" +
-        "<p><strong>Average:</strong> " + average.toFixed(2) + "</p>" +
-        "<p><strong>Highest Number:</strong> " + highest + "</p>" +
-        "<p><strong>Lowest Number:</strong> " + lowest + "</p>" +
-        "<p><strong>Range:</strong> " + range + "</p>" +
-        "<p><strong>Even Numbers:</strong> " + evenCount + "</p>" +
-        "<p><strong>Odd Numbers:</strong> " + oddCount + "</p>";
 }
 
-function addTask(){
+document.getElementById("background").addEventListener("click", function() {
+    changeWebsite("background");
+});
 
-    let taskInput = document.getElementById("taskInput");
-    let task = taskInput.value;
+document.getElementById("color").addEventListener("click", function() {
+    changeWebsite("color");
+});
 
-    if(task.trim() === ""){
-        alert("Please enter a task.");
-        return;
-    }
+document.getElementById("size").addEventListener("click", function() {
+    changeWebsite("size");
+});
 
-    let li = document.createElement("li");
-    li.textContent = task;
-
-    document.getElementById("taskList").appendChild(li);
-
-    taskInput.value = "";
-}
+document.getElementById("reset").addEventListener("click", function() {
+    changeWebsite("reset");
+});
